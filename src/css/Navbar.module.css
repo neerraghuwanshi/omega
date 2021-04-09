@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15.3px;
+    width: 1000px;
+    margin: 15.3px auto;
 }
 
 .omega{
@@ -37,6 +38,10 @@
     text-align: right;
     color: #ffffff;
     text-decoration: none;
+}
+
+.link:hover{
+    color: #f04037;
 }
 
 .activeLink{
