@@ -3,54 +3,50 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 1000px;
-    margin: 23px auto 0 auto;
+    box-sizing: border-box;
+    width: var(--navContainerWidth);
+    padding: 0 15px;
+    margin: auto;
 }
 
 .heading{
-    width: 473px;
-    height: 126px;
-    margin-top: 100px;
+    width: 80%;
     font-family: CircularStd;
-    font-size: 54px;
+    color: var(--navLinkColor);
+    text-align: center;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.17;
     letter-spacing: -1.69px;
-    text-align: center;
-    color: #ffffff;
+    font-size: 26px;
+    margin-top: 50px;
 }
 
 .para{
-    width: 620px;
-    height: 35px;
-    margin: -20px auto;
+    width: 70%;
     font-family: CircularStd;
-    font-size: 18.9px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
+    text-align: center;
+    color: var(--footerLinkColor);
     line-height: 1.86;
     letter-spacing: -0.59px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    margin: 5px 0 -25px 0;
 }
 
 .video{
-    width: 1000px;
-    margin: 60px 0 0 0;
-    border-radius: 9px;
-    box-shadow: 0 38px 49px 0 rgba(0, 0, 0, 0.31);
+    width: var(--navContainerWidth);
+    border-radius: 5px;
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.31);
 }
 
 .playButton{
-    width: 112px;
-    height: 112px;
-    border-radius: 56px 56px;
-    background: #5454d4 url('path.png') no-repeat center center/auto;
     position: relative;
-    top: -390px;
+    cursor: pointer;
+    z-index: 2;
+    background: #5454d4 url('./images/path.png') no-repeat center center/auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px 25px;
+    top: calc((var(--navContainerWidth))/2.7);
 }
 
 .playButton:hover{
@@ -59,7 +55,129 @@
 
 .featureContainer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 930px;
-    margin-bottom: 40px;
+    width: calc(var(--navContainerWidth)*90/100);
+    grid-template-columns: 1fr 1fr;
+    margin: 15px 0 40px 0;
+}
+
+
+@media (min-width: 300px){
+    .heading{
+        font-size: 28px;
+        margin: 55px 0 0 0;
+    }
+    .para{
+        font-size: 11px;
+        margin: 8px 0 -35px 0;
+    }
+    .video{
+        margin-top: 18px;
+    }
+    .featureContainer{
+        margin: 21px 0 45px 0;
+    }
+}
+
+@media (min-width: 400px){
+    .heading{
+        font-size: 32px;
+        margin: 60px 0 0 0;
+    }
+    .para{
+        font-size: 13px;
+        margin: 10px 0 -40px 0;
+    }
+    .video{
+        margin-top: 25px;
+        box-shadow: 0 25px 35px 0 rgba(0, 0, 0, 0.31);
+    }
+    .featureContainer{
+        margin: 25px 0 49px 0;
+    }
+    .playButton{
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+    }
+}
+
+
+@media (min-width: 515px) {
+    .heading{
+        width: 50%;
+    }
+    .para{
+        width: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    .heading{
+        font-size: 40px;
+        margin: 70px 0 0 0;
+    }
+    .para{
+        font-size: 16px;
+        margin: 15px 0 -45px 0;
+    }
+    .video{
+        margin-top: 30px;
+        border-radius: 9px;
+        box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.31);
+    }
+    .playButton{
+        width: 70px;
+        height: 70px;
+        border-radius: 35px 35px;
+    }
+    .featureContainer{
+        margin: 30px 0 55px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .heading{
+        font-size: 50px;
+        margin: 90px 0 0 0;
+    }
+    .para{
+        font-size: 17px;
+        margin: 20px 0 -80px 0;
+    }
+    .video{
+        margin-top: 60px;
+        box-shadow: 0 35px 40px 0 rgba(0, 0, 0, 0.31);
+    }
+    .playButton{
+        width: 90px;
+        height: 90px;
+        border-radius: 45px 45px;
+    }
+    .featureContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 35px 0 62px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .heading{
+        font-size: 54px;
+        margin: 100px 0 0 0;
+    }
+    .para{
+        font-size: 19px;
+        margin: 20px 0 -100px 0;
+    }
+    .video{
+        margin-top: 60px;
+        box-shadow: 0 40px 50px 0 rgba(0, 0, 0, 0.31);
+    }
+    .playButton{
+        width: 112px;
+        height: 112px;
+        border-radius: 56px 56px;
+    }
+    .featureContainer{
+        margin: 40px 0 70px 0;
+    }
 }

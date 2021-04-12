@@ -1,5 +1,19 @@
-body {
+:root{
+  --navLinkColor: #ffffff;
+  --footerLinkColor: rgba(255, 255, 255, 0.7);
+  --linkHoverColor: #f04037;
+  --navGetBetaBorderColor: #c31a12;
+  --alternateBackgroundColor: #1e1e20;
+  --navContainerWidth: 100vw;
+  --navLinkFontSize: 10px;
+}
+
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

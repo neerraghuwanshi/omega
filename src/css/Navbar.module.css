@@ -2,70 +2,122 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
-    margin: 15.3px auto;
+    box-sizing: border-box;
+    margin: auto;
+    width: var(--navContainerWidth);
+    padding: 15px;
 }
 
 .omega{
-    width: 71px;
-    height: 28px;
     font-family: CircularStd;
-    font-size: 21.6px;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
+    color: var(--navLinkColor);
     letter-spacing: -0.68px;
-    color: #ffffff;
+    font-weight: 900;
+    font-size: 16px;
 }
 
 .navLinksContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 195px;
-    height: 18px;
+    width: calc(var(--navContainerWidth)/3);
 }
 
 .link{
+    text-align: center;
     font-family: CircularStd;
-    font-size: 14.4px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.45px;
-    text-align: right;
-    color: #ffffff;
+    color: var(--navLinkColor);
     text-decoration: none;
+    padding: 3px;
+    letter-spacing: -0.45px;
+    font-size: var(--navLinkFontSize);
 }
 
 .link:hover{
-    color: #f04037;
+    color: var(--linkHoverColor);
 }
 
 .activeLink{
-    color: #f04037;
+    color: var(--linkHoverColor);
 }
 
 .getBeta{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 141px;
-    height: 41px;
-    box-sizing: border-box;
-    padding: 11px 7px 12px;
-    border-radius: 4.5px;
-    border: solid 0.9px #c31a12;
-    background-color: #f04037;
-    font-family: CircularStd;
-    font-size: 14.4px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.45px;
     text-align: center;
-    color: #ffffff;
+    box-sizing: border-box;
+    font-family: CircularStd;
+    color: var(--navLinkColor);
+    background-color: var(--linkHoverColor);
+    border: solid 0.9px var(--navGetBetaBorderColor);
+    border-radius: 4.5px;
+    letter-spacing: -0.45px;
+    font-weight: 500;
+    padding: 6px 12px;
+    font-size: var(--navLinkFontSize);
+}
+
+
+@media (min-width: 400px){
+    :root{
+        --navLinkFontSize: 13px;
+    }
+    .omega{
+        font-size: 17px;
+    }
+    .getBeta{
+        padding: 10px 20px;
+    }
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/3);
+    }
+}
+
+@media (min-width: 768px) {
+    :root{
+        --navContainerWidth: 750px;
+        --navLinkFontSize: 13px;
+    }
+    .omega{
+        font-size: 18px;
+    }
+    .link{
+        padding: 10px;
+    }
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/4);
+    }
+    .getBeta{
+        padding: 12px 24px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root{
+        --navContainerWidth: 970px;
+        --navLinkFontSize: 14px;
+    }
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/5);
+    }
+    .omega{
+        font-size: 20px;
+    }
+    .getBeta{
+        padding: 13px 26px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root{
+        --navContainerWidth: 1170px;
+        --navLinkFontSize: 15px;
+    }
+    .omega{
+        font-size: 22px;
+    }
+    .getBeta{
+        padding: 14px 28px;
+    }
 }

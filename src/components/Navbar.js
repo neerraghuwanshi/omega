@@ -11,9 +11,9 @@ function Navbar() {
     return (
         <nav>
             <div className={container}>
-                <div className={omega}>
+                <h1 className={omega}>
                     Omega
-                </div>
+                </h1>
                 <div className={navLinksContainer}>
                     <NavLink 
                         className={link} 
@@ -37,9 +37,9 @@ function Navbar() {
                         Support
                     </NavLink>
                 </div>
-                <div className={getBeta}>
+                <h2 className={getBeta}>
                     Get Beta Access
-                </div>
+                </h2>
             </div>
         </nav>
     )

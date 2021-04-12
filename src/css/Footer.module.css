@@ -2,62 +2,94 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
-    margin: 35px auto;
+    margin: auto;
+    box-sizing: border-box;
+    width: var(--navContainerWidth);
+    padding: 20px 15px;
 }
 
 .omega{
-    width: 71px;
-    height: 28px;
     font-family: CircularStd;
-    font-size: 21.6px;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
+    color: var(--navLinkColor);
     letter-spacing: -0.68px;
-    color: #ffffff;
+    font-weight: 900;
+    font-size: 16px;
 }
 
 .navLinksContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 250px;
+    margin: 0 10px;
+    width: calc(var(--navContainerWidth)/2);
 }
 
 .link{
-    font-family: CircularStd;
-    font-size: 14.4px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.38;
-    letter-spacing: -0.45px;
-    margin: 0 20px;
+    text-align: center;
     text-align: right;
-    color: rgba(255, 255, 255, 0.7);
+    font-family: CircularStd;
+    color: var(--footerLinkColor);
     text-decoration: none;
+    letter-spacing: -0.45px;
+    padding: 5px;
+    font-size: var(--navLinkFontSize);
 }
 
 .link:hover{
-    color: #f04037;
+    color: var(--linkHoverColor);
 }
 
 .activeLink{
-    color: #f04037;
+    color: var(--linkHoverColor);
 }
 
 .copyright{
-    width: 257px;
-    height: 34px;
+    text-align: center;
     font-family: CircularStd;
-    font-size: 14.4px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2.38;
+    color: var(--footerLinkColor);
     letter-spacing: -0.45px;
-    text-align: right;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: calc(var(--navLinkFontSize));
+}
+
+
+@media (min-width: 400px) {
+    .omega{
+        font-size: 17px;
+    }
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/2.3);
+    }
+    .copyright{
+        font-size: var(--navLinkFontSize);
+    }
+}
+
+@media (min-width: 500px) {
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/2.5);
+    }
+}
+
+@media (min-width: 768px) {
+    .omega{
+        font-size: 18px;
+    }
+    .link{
+        padding: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .omega{
+        font-size: 20px;
+    }
+    .navLinksContainer{
+        width: calc(var(--navContainerWidth)/3);
+    }
+}
+
+@media (min-width: 1200px) {
+    .omega{
+        font-size: 22px;
+    }
 }

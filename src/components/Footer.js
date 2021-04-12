@@ -11,9 +11,9 @@ function Footer() {
     return (
         <footer>
             <div className={container}>
-                <div className={omega}>
+                <h1 className={omega}>
                     Omega
-                </div>
+                </h1>
                 <div className={navLinksContainer}>
                     <NavLink 
                         className={link} 
@@ -37,9 +37,9 @@ function Footer() {
                         Terms and Conditions
                     </NavLink>
                 </div>
-                <div className={copyright}>
+                <h2 className={copyright}>
                     &#169; 2020 UXTheme, &nbsp;All Rights Reserved
-                </div>
+                </h2>
             </div>
         </footer>
     )
