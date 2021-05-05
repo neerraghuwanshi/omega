@@ -1,0 +1,99 @@
+@keyframes firstCross{
+    to {
+        transform: rotateZ(45deg);
+        margin-bottom: -1.7px;
+    }
+}
+
+@keyframes firstMenu{
+    from {
+        transform: rotateZ(45deg);
+        margin-bottom: -1.7px;
+    }
+    to {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes lastCross{
+    to {
+        transform: rotateZ(-45deg);
+    }
+}
+
+@keyframes lastMenu{
+    from {
+        transform: rotateZ(-45deg);
+    }
+    to {
+        transform: rotateZ(0);
+    }
+}
+
+.container{
+    width: 15px;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.bar{
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.first{
+    margin-bottom: 6px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.last{
+    animation-duration: 1s;
+    animation-fill-mode: forwards
+}
+
+.container:hover .first{
+    background-color: rgb(82, 180, 236);
+}
+
+.container:hover .last{
+    background-color: rgb(82, 180, 236);
+}
+
+.firstMenu{
+    animation-name: firstMenu;
+}
+
+.lastMenu{
+    animation-name: lastMenu;
+}
+
+.firstCross{
+    animation-name: firstCross;
+}
+
+.lastCross{
+    animation-name: lastCross;
+}
+
+
+@media (min-width: 400px){
+    .container{
+        width: 20px;
+        padding: 10px;
+        position: relative;
+        z-index: 2;
+    }
+    .bar{
+        width: 20px;
+    }
+    .first{
+        margin-bottom: 7.5px;
+    }
+}

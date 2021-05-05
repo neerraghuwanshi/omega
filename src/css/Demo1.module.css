@@ -1,66 +1,81 @@
 .container{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     width: var(--navContainerWidth);
     padding: 0 15px;
-    margin: auto;
+    margin: 70px auto;
+}
+
+.innerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .textContainer{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 .heading{
     text-align: center;
-    font-family: CircularStd;
     font-weight: bold;
     line-height: 1.05;
     letter-spacing: -.67px;
     color: var(--navLinkColor);
     font-size: 28px;
-    margin: 30px auto 0 auto;
 }
 
 .para{
     text-align: center;
     width: 80%;
-    margin: 10px auto;
-    font-family: CircularStd;
+    margin-top: 10px;
     letter-spacing: -0.59px;
     font-size: 10px;
     line-height: 1.86;
     color: var(--footerLinkColor);
 }
 
+.imageContainer{
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
 .image{
-    width: 10vw;
-    position: absolute;
-    left: 0;
+    display: none;
 }
 
 .formContainer{
-    width: 60%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    background: url('./images/form.png') no-repeat center center/contain;
+    background-image: linear-gradient(to top, purple, #5454d4);
+    margin-top: 16px;
+    width: calc((var(--navContainerWidth) - 30px) * .9);
+    height: calc((var(--navContainerWidth) - 30px) * .9);
+    border-radius: calc((var(--navContainerWidth) - 30px) * .45);
 }
 
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
     background-color: var(--navLinkColor);
-    width: 60%;
-    padding: 10px;
     border-radius: 5px;
-    margin-right: 5px;
-    box-shadow: 0 20 25px 0 rgba(0, 0, 0, 0.79);
+    box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.79);
+    padding: 3.4vw;
+    width: calc((var(--navContainerWidth) - 30px) * .70);
 }
 
 .input{
@@ -70,14 +85,12 @@
     -moz-appearance:none;
     -webkit-appearance:none;
     appearance:none;
-    background-color: var(--navLinkColor);
-    font-family: CircularStd;
     letter-spacing: -0.59px;
     border: solid 0.9px #eae9f2;
     border-radius: 5px;
-    font-size: 6px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    font-size: 3.4vw;
+    padding: 1.7vw 3.3vw;
+    margin-bottom: 4vw;
 }
 
 .button{
@@ -85,179 +98,219 @@
     background-color: #f04037;
     color: var(--navLinkColor);
     text-align: center;
-    font-family: CircularStd;
     font-weight: 500;
     border: solid 0.9px #c31a12;
     border-radius: 5px;
     letter-spacing: -0.59px;
-    font-size: 6px;
-    padding: 5px 10px;
+    font-size: 3.4vw;
+    padding: 1.7vw 3.3vw;
 }
 
 
-@media (min-width: 300px){
+@media (min-width: 350px){
+    .container{
+        margin: 70px auto;
+    }
     .heading{
         font-size: 32px;
-        margin: 35px auto 0 auto;
     }
     .para{
         font-size: 11px;
-        margin: 15px auto;
+        margin-top: 15px;
     }
     .formContainer{
-        width: 45%;
+        margin-top: 22.5px;
+        width: calc((var(--navContainerWidth) - 30px) * .7);
+        height: calc((var(--navContainerWidth) - 30px) * .7);
+        border-radius: calc((var(--navContainerWidth) - 30px) * .35);
+    }
+    .form{
+        padding: 3.2vw;
+        width: calc((var(--navContainerWidth) - 30px) * .50);
     }
     .input{
-        font-size: 9px;
-        padding: 5px 10px;
-        margin-bottom: 5px;
+        font-size: 2.7vw;
+        padding: 1.4vw 3.2vw;
+        margin-bottom: 3.2vw;
     }
     .button{
-        font-size: 9px;
-        padding: 5px 10px;
+        font-size: 2.5vw;
+        padding: 1.4vw 3.2vw;
     }
 }
 
 @media (min-width: 400px){
+    .container{
+        margin: 80px auto;
+    }
     .heading{
+        width: 90%;
         font-size: 34px;
-        margin: 40px auto 0 auto;
     }
     .para{
         font-size: 13px;
-        margin: 20px auto;
+        margin-top: 20px;
     }
     .formContainer{
-        width: 60%;
-        padding: 38px;
+        margin-top: 27px;
+        width: calc((var(--navContainerWidth) - 30px) * .6);
+        height: calc((var(--navContainerWidth) - 30px) * .6);
+        border-radius: calc((var(--navContainerWidth) - 30px) * .3);
     }
     .form{
-        width: 100%;
-        margin-right: 10px;
-        padding: 15px;
-        margin-right: 10px;
+        width: calc((var(--navContainerWidth) - 30px) * .45);
+        padding: 3vw;
         box-shadow: 0 25px 37px 0 rgba(0, 0, 0, 0.79);
     }
     .input{
-        font-size: 14px;
-        padding: 8px 16px;
-        margin-bottom: 8px;
+        font-size: 2.5vw;
+        padding: 1.2vw 3vw;
+        margin-bottom: 2.8vw;
     }
     .button{
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 2.5vw;
+        padding: 1.2vw 3vw;
     }
 }
 
+@media (min-width: 500px) {
+    .textContainer{
+        width: 90%;
+    }
+}
 
-@media (min-width: 515px) {
-    /* .container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        box-sizing: border-box;
-        width: var(--navContainerWidth);
-        padding: 0 15px;
-        margin: auto;
-    } */
+@media (min-width: 600px) {
+    .textContainer{
+        width: 80%;
+    }
 }
 
 @media (min-width: 768px) {
     .container{
         flex-direction: row;
+        justify-content: flex-start;
         text-align: left;
+        margin: 90px auto;
+    }
+    .innerContainer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .textContainer{
+        width: 50%;
+        align-items: flex-start;
     }
     .heading{
+        width: 100%;
         text-align: left;
         font-size: 45px;
-        margin: 45px auto 0 auto;
     }
     .para{
         width: 100%;
         text-align: left;
         font-size: 16px;
-        margin: 25px auto;
+        margin-top: 25px;
     }
     .formContainer{
-        width: 90%;
-        padding: 30px;
-        margin: 60px 0;
+        margin-top: 0;
+        height: calc(var(--navContainerWidth) * .44);
+        width: calc(var(--navContainerWidth) * .44);
+        border-radius: calc(var(--navContainerWidth) * .22);
     }
     .form{
-        width: 60%;
-        padding: 26px;
-        margin-right: 10px;
+        width: calc(var(--navContainerWidth) * .33);
+        padding: 18px;
         border-radius: 8px;
         box-shadow: 0 30px 44px 0 rgba(0, 0, 0, 0.79);
     }
     .input{
         font-size: 15px;
-        padding: 8px 18px;
+        padding: 8px 12px;
         border-radius: 8px;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
     .button{
         font-size: 15px;
-        padding: 8px 16px;
+        padding: 8px 12px;
         border-radius: 8px;
+    }
+    .image{
+        display: block;
+        width: 10vw;
+        position: absolute;
+        left: calc(-1 * ((100vw - var(--navContainerWidth)) / 2) - 15px);
     }
 }
 
 @media (min-width: 992px) {
+    :root{
+        --formContainerWidth: 34vw;
+    }
+    .container{
+        margin: 100px auto;
+    }
+    .textContainer{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
     .heading{
         font-size: 54px;
-        margin: 55px auto 0 auto;
+        width:  100%;
     }
     .para{
         font-size: 17px;
-        margin: 30px auto;
+        margin-top: 30px;
     }
     .formContainer{
-        padding: 35px;
+        height: calc(var(--navContainerWidth) * .38);
+        width: calc(var(--navContainerWidth) * .38);
+        border-radius: calc(var(--navContainerWidth) * .19);
     }
     .form{
-        width: 54%;
-        padding: 28px;
-        margin-right: 10px;
-        box-shadow: 0 35px 45px 0 rgba(0, 0, 0, 0.79);
+        width: calc(var(--navContainerWidth) * .27);
+        padding: 25px;
+        box-shadow: 0 40px 50px 0 rgba(0, 0, 0, 0.79);
     }
     .input{
         font-size: 17px;
-        padding: 9px 18px;
-        margin-bottom: 18px;
+        padding: 8px 12px;
+        margin-bottom: 16px;
     }
     .button{
         font-size: 17px;
-        padding: 9px 18px;
+        padding: 8px 12px;
     }
 }
 
 @media (min-width: 1200px) {
+    :root{
+        --formContainerWidth: 30vw;
+    }
+    .container{
+        margin: 120px auto;
+    }
+    .textContainer{
+        width: 45%;
+    }
     .heading{
         font-size: 60px;
-        margin: 65px auto 0 auto;
     }
     .para{
         font-size: 19px;
-        margin: 35px auto;
-    }
-    .formContainer{
-        padding: 50px;
     }
     .form{
-        width: 54%;
         padding: 30px;
-        margin-right: 10px;
-        box-shadow: 0 40px 50px 0 rgba(0, 0, 0, 0.79);
     }
     .input{
         font-size: 19px;
-        padding: 10px 20px;
-        margin-bottom: 20px;
+        padding: 10px 14px;
+        margin-bottom: 18px;
     }
     .button{
-        padding: 10px 20px;
         font-size: 19px;
+        padding: 10px 14px;
     }
 }

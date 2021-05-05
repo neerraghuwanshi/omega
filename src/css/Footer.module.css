@@ -1,6 +1,7 @@
 .container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: auto;
     box-sizing: border-box;
@@ -9,30 +10,25 @@
 }
 
 .omega{
-    font-family: CircularStd;
     color: var(--navLinkColor);
     letter-spacing: -0.68px;
     font-weight: 900;
     font-size: 16px;
 }
 
-.navLinksContainer{
+.navLinkContainer{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0 10px;
-    width: calc(var(--navContainerWidth)/2);
+    flex-direction: column;
+    justify-content: center;
 }
 
 .link{
-    text-align: center;
-    text-align: right;
-    font-family: CircularStd;
-    color: var(--footerLinkColor);
     text-decoration: none;
     letter-spacing: -0.45px;
-    padding: 5px;
-    font-size: var(--navLinkFontSize);
+    padding: 10px;
+    color: var(--footerLinkColor);
+    font-size: calc(var(--navLinkFontSize)/1.2);
 }
 
 .link:hover{
@@ -45,37 +41,46 @@
 
 .copyright{
     text-align: center;
-    font-family: CircularStd;
-    color: var(--footerLinkColor);
+    font-weight: normal;
     letter-spacing: -0.45px;
-    font-size: calc(var(--navLinkFontSize));
+    color: var(--footerLinkColor);
+    font-size: calc(var(--navLinkFontSize)/1.2);
 }
 
+.hr{
+    width: 100vw;
+    margin: 20px 0;
+    opacity: 0.5;
+}
 
 @media (min-width: 400px) {
     .omega{
         font-size: 17px;
     }
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/2.3);
-    }
-    .copyright{
-        font-size: var(--navLinkFontSize);
-    }
-}
-
-@media (min-width: 500px) {
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/2.5);
-    }
 }
 
 @media (min-width: 768px) {
+    .hr{
+        display: none;
+    }
+    .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .navLinkContainer{
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(var(--navContainerWidth)/2.4);
+    }
     .omega{
         font-size: 18px;
     }
     .link{
         padding: 10px;
+        font-size: var(--navLinkFontSize);
+    }
+    .copyright{
+        font-size: var(--navLinkFontSize);
     }
 }
 
@@ -83,12 +88,15 @@
     .omega{
         font-size: 20px;
     }
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/3);
+    .navLinkContainer{
+        width: calc(var(--navContainerWidth)/2.8);
     }
 }
 
 @media (min-width: 1200px) {
+    .navLinkContainer{
+        width: calc(var(--navContainerWidth)/3);
+    }
     .omega{
         font-size: 22px;
     }

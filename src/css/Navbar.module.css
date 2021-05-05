@@ -1,44 +1,74 @@
+@keyframes menuSlideUp {
+    from{
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes menuSlideDown {
+    from{
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.menu{
+    min-height: 400px;
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--alternateBackgroundColor);
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
+    transform: translateY(-100vh);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.menuUp {
+    animation-name: menuSlideUp;
+}
+
+.menuDown{
+    animation-name: menuSlideDown;
+}
+
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    margin: auto;
+    margin: 0 auto;
     width: var(--navContainerWidth);
     padding: 15px;
+    position: relative;
+    z-index: 3;
+    background: var(--backgroundColor);
 }
 
 .omega{
-    font-family: CircularStd;
     color: var(--navLinkColor);
     letter-spacing: -0.68px;
-    font-weight: 900;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.navLinksContainer{
+.navLinkContainer{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: calc(var(--navContainerWidth)/3);
-}
-
-.link{
-    text-align: center;
-    font-family: CircularStd;
-    color: var(--navLinkColor);
-    text-decoration: none;
-    padding: 3px;
-    letter-spacing: -0.45px;
-    font-size: var(--navLinkFontSize);
-}
-
-.link:hover{
-    color: var(--linkHoverColor);
-}
-
-.activeLink{
-    color: var(--linkHoverColor);
+    width: calc(var(--navContainerWidth)/3.7);
 }
 
 .getBeta{
@@ -47,46 +77,65 @@
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    font-family: CircularStd;
     color: var(--navLinkColor);
     background-color: var(--linkHoverColor);
     border: solid 0.9px var(--navGetBetaBorderColor);
-    border-radius: 4.5px;
     letter-spacing: -0.45px;
     font-weight: 500;
-    padding: 6px 12px;
+    border-radius: 3px;
+    padding: 7px 7px;
     font-size: var(--navLinkFontSize);
 }
 
 
-@media (min-width: 400px){
-    :root{
-        --navLinkFontSize: 13px;
+@media (max-height: 400px){
+    @keyframes menuSlideUp {
+        from{
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-400px);
+        }
     }
+    
+    @keyframes menuSlideDown {
+        from{
+            transform: translateY(-400px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    .menu{
+        transform: translateY(-400px);
+    }
+}
+
+@media (min-width: 300px){
+    .omega{
+        font-size: 15px;
+    }
+    .getBeta{
+        padding: 8px 8px;
+    }
+}
+
+@media (min-width: 400px){
     .omega{
         font-size: 17px;
     }
     .getBeta{
-        padding: 10px 20px;
-    }
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/3);
+        padding: 8px 14px;
+        border-radius: 4.5px;
     }
 }
 
 @media (min-width: 768px) {
     :root{
         --navContainerWidth: 750px;
-        --navLinkFontSize: 13px;
     }
     .omega{
         font-size: 18px;
-    }
-    .link{
-        padding: 10px;
-    }
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/4);
     }
     .getBeta{
         padding: 12px 24px;
@@ -96,13 +145,12 @@
 @media (min-width: 992px) {
     :root{
         --navContainerWidth: 970px;
-        --navLinkFontSize: 14px;
-    }
-    .navLinksContainer{
-        width: calc(var(--navContainerWidth)/5);
     }
     .omega{
         font-size: 20px;
+    }
+    .navLinkContainer{
+        width: calc(var(--navContainerWidth)/4);
     }
     .getBeta{
         padding: 13px 26px;
@@ -112,10 +160,12 @@
 @media (min-width: 1200px) {
     :root{
         --navContainerWidth: 1170px;
-        --navLinkFontSize: 15px;
     }
     .omega{
         font-size: 22px;
+    }
+    .navLinkContainer{
+        width: calc(var(--navContainerWidth)/4.5);
     }
     .getBeta{
         padding: 14px 28px;

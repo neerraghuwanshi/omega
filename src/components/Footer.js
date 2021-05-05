@@ -6,7 +6,7 @@ import styles from '../css/Footer.module.css'
 
 function Footer() {
 
-    const {link, activeLink, omega, navLinksContainer, copyright, container} = styles
+    const {link, activeLink, omega, navLinkContainer, copyright, container, hr} = styles
 
     return (
         <footer>
@@ -14,7 +14,8 @@ function Footer() {
                 <h1 className={omega}>
                     Omega
                 </h1>
-                <div className={navLinksContainer}>
+                <hr className={hr}/>
+                <div className={navLinkContainer}>
                     <NavLink 
                         className={link} 
                         activeClassName={activeLink} 
@@ -37,6 +38,7 @@ function Footer() {
                         Terms and Conditions
                     </NavLink>
                 </div>
+                <hr className={hr}/>
                 <h2 className={copyright}>
                     &#169; 2020 UXTheme, &nbsp;All Rights Reserved
                 </h2>

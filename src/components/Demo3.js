@@ -8,7 +8,7 @@ function Demo3() {
     const { mainContainer, container, heading, para, imageContainer, leftImage, rightImage, image } = styles
 
     return (
-        <content>
+        <section>
             <div className={mainContainer}>
                 <div className={container}>
                     <h2 className={heading}>
@@ -19,17 +19,23 @@ function Demo3() {
                     </p>
                     <div className={imageContainer}>
                         <img 
+                            alt='leftImage'
                             className={leftImage + ' ' + image} 
                             src='images/demos/demo3/leftImage.png'
-                            alt='leftImage'/>
+                            srcSet={
+                                'images/demos/demo3/leftImage@2x.png 2x, images/demos/demo3/leftImage@3x.png 3x'
+                            }/>
                         <img
+                            alt='rightImage'
                             className={rightImage + ' ' + image} 
                             src='images/demos/demo3/rightImage.png'
-                            alt='rightImage'/>
+                            srcSet={
+                                'images/demos/demo3/rightImage@2x.png 2x, images/demos/demo3/rightImage@3x.png 3x'
+                            }/>
                     </div>
                 </div>
             </div>
-        </content>
+        </section>
     )
 }
 

@@ -1,0 +1,47 @@
+.link{
+    text-align: center;
+    color: var(--navLinkColor);
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: -0.45px;
+    font-size: var(--navLinkFontSize);
+}
+
+.link:hover{
+    color: var(--linkHoverColor);
+}
+
+.activeLink{
+    color: var(--linkHoverColor);
+}
+
+
+@media (min-width: 0){
+    :root{
+        --navLinkFontSize: 13px;
+    }
+}
+
+@media (min-width: 400px){
+    :root{
+        --navLinkFontSize: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root{
+        --navLinkFontSize: 13px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root{
+        --navLinkFontSize: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root{
+        --navLinkFontSize: 15px;
+    }
+}

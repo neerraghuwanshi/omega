@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 
 import Feature from './Feature'
 import styles from '../css/Demo2.module.css'
+import { WindowWidthContext } from './Wrapper'
 
 function Demo2() {
 
     const { container, heading, para, video, featureContainer, playButton, videoContainer } = styles
 
-    const togglePlay = (visibility) => {
+    const windowWidth = useContext(WindowWidthContext)
+
+    const getCurrentThumbnailUrl = () => {
+        let url = 'images/demos/demo2/thumbnail.png'
+        if (window.innerWidth > 768){
+            url =  'images/demos/demo2/thumbnail@3x.png'
+        }
+        else if (window.innerWidth > 400){
+            url =  'images/demos/demo2/thumbnail@2x.png'
+        }
+        else{
+            url = 'images/demos/demo2/thumbnail.png'
+        }
+        return url
+    }
+
+    const [thumbnailUrl, setThumbnailUrl] = useState(getCurrentThumbnailUrl())
+
+    const togglePlay = () => {
         let demoVideo = document.getElementsByClassName(video)[0]
         if (demoVideo.paused){
             demoVideo.play()
@@ -24,8 +43,15 @@ function Demo2() {
         }
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            setThumbnailUrl(getCurrentThumbnailUrl())
+        }
+        handleResize()
+    }, [windowWidth])
+
     return (
-        <content>
+        <section>
             <div className={container}>
                 <h2 className={heading}>
                     Why Omega would be your best fit?
@@ -34,16 +60,21 @@ function Demo2() {
                     Watch this 1 min video to learn about omega.
                 </p>
                 <div className={playButton} onClick={togglePlay}>
-
+                    <img 
+                        alt='Play Button'
+                        src='images/demos/demo2/path.png'
+                        srcSet={
+                            'images/demos/demo2/path@2x.png 2x, images/demos/demo2/path@3x.png 3x'
+                        }/>
                 </div>
                 <div className={videoContainer}>
                     <video
                         onClick={togglePlay}
                         className={video}
-                        poster='images/demos/demo2/thumbnail.png'>
+                        poster={thumbnailUrl}>
                         <source 
-                            src="videos/demo2/demoVideo.mp4" 
-                            type="video/webm" />
+                            type='video/mp4'
+                            src='videos/demo2/demoVideo.mp4'/>
                     </video>
                 </div>
                 <div className={featureContainer}>
@@ -73,8 +104,8 @@ function Demo2() {
                         imageUrl='loop.png'/>
                 </div>
             </div>
-        </content>
+        </section>
     )
 }
 
-export default Demo2
+export default React.memo(Demo2)
